@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import Styled from "./global.module.css"
+import { Pozadina } from "./components/pozadina"
+import { Nav } from "./components/nav/nav"
+import { Button } from "./components/button/button"
+import { Section2 } from "./components/section2/section2"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export const App = () => {
+    return (
+        <>
+            <Nav />
+            <Pozadina>                
+                    <div className={Styled.centriraj}>
+                        <h1 className={Styled.naslov}>Atletski klub Sloboda Novi Grad</h1>
+                        <p className={Styled.paragraf}>Okupljanje što većeg broja sportista, stručnih sportskih radnika i drugih zainteresovanih lica, radi omasovljavanja, popularizacije, razvoja i unapređenja atletskog sporta</p>
+                        <Button text={"POGLEDAJ VIŠE"} />
+                    </div>
+                    <div className={Styled.Trkac}>
+                        <img className={Styled.SlikaTrkaca} src="./images/trkac.png" alt="trkac"/>
+                    </div>
+            </Pozadina>
+            <Section2 />
+        </>
+    )
 }
-
-export default App;
